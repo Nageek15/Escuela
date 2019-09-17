@@ -7,6 +7,7 @@ public class App {
 		Console.s.setVisible(true);
 		Console.s.setTheme(Console.theme.shell2);
 		boolean running=true;
+		
 		while (running) {
 			Console.s.print("->>");
 			String cmd=Console.s.readLine();
@@ -15,6 +16,7 @@ public class App {
 					running=false;
 					System.exit(0);
 				break;
+				
 				case "?":
 					Console.s.println("Commands: ");
 					Console.s.println("  q - quit");
