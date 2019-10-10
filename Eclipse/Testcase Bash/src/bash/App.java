@@ -30,7 +30,7 @@ public class App {
 			switch (arg(0)) {
 				case "q":
 					running=false;
-					//quiting is the same as exiting:
+					//quitting is the same as exiting:
 					System.exit(0);
 				break;
 				
