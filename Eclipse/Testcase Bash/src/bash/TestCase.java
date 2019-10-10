@@ -2,6 +2,8 @@ package bash;
 
 import java.util.ArrayList;
 
+import gameutil.text.Console;
+
 public class TestCase {
 	
 	public final int no;
@@ -30,7 +32,15 @@ public class TestCase {
 	}
 	
 	public void delete(int index) {
-		ios.remove(index);
+		try {
+			ios.remove(index);
+		} catch (Exception e) {
+			Console.s.println("No io to delete.");
+		}
+	}
+	
+	public void delete() {
+		delete(ios.size()-1);
 	}
 	
 	public String editingString() {
@@ -49,7 +59,7 @@ public class TestCase {
 		for (Io io:ios) {
 			value=value+io.toString();
 		}
-		value=value+"<end of "+name+">\n";
+		value=value+"<--end-->\n";
 		return value;
 	}
 	
