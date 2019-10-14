@@ -129,8 +129,8 @@ public class App {
 							argNo++;
 							stub=arg(argNo);
 						}
-						//add last stub without "
-						data=data+" "+stub.substring(0,stub.length()-1);
+						//add last stub without " and without extra space at beginning
+						data=data.substring(1)+" "+stub.substring(0,stub.length()-1);
 						//set arg no to next arg to get index
 					}
 					
@@ -160,8 +160,8 @@ public class App {
 							argNo++;
 							stub=arg(argNo);
 						}
-						//add last stub without "
-						data=data+" "+stub.substring(0,stub.length()-1);
+						//add last stub without " and without extra space at beginning
+						data=data.substring(1)+" "+stub.substring(0,stub.length()-1);
 						//set arg no to next arg to get index
 					}
 					argNo++;
@@ -219,7 +219,7 @@ public class App {
 				case "p":
 					try {
 						int i=Integer.parseInt(arg(1));
-						Console.s.println(testCases.get(i).toString());
+						Console.s.println(testCases.get(i).editingString());
 					} catch (NumberFormatException e) {
 						for (int no:testCases.keySet()) {
 							Console.s.println(testCases.get(no).toString());
@@ -236,7 +236,7 @@ public class App {
 				case "s":
 					String fileName="";
 					if (arg(1).equals("")) {
-						fileName="testcases/testCases.txt";
+						fileName="testcases/TestCases.txt";
 					} else {
 						fileName="testcases/"+arg(1)+".txt";
 					}
